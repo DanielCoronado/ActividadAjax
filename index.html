@@ -23,10 +23,8 @@
             <th>ACCIÓN</th>
           </tr>
         </thead>
-        <tbody>
-          <tr>
-            
-          </tr>
+        <tbody id="tabla-registro">
+        <!-- contenido dinámico -->
         </tbody>
       </table>
     </div>
@@ -37,14 +35,34 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-          <h4 class="modal-title">Modal title</h4>
+          <h4 class="modal-title">Formulario para ingresar persona</h4>
         </div>
         <div class="modal-body">
-          
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
+          <form id="form-ingreso">
+            <legend>Nuevo Registro:</legend>
+            <div class="form-group">
+              <input required type="text" class="form-control" placeholder="Ingrese el RUT" name="rut">
+            </div>
+            <div class="form-group">
+              <input required type="text" class="form-control" placeholder="Ingrese Nombre con Apellido" name="nombre">
+            </div>
+            <div class="form-group">
+              <input required type="email" class="form-control" placeholder="Ingrese Correo Electrónico" name="email">
+            </div>
+            <div class="form-group">
+              <input required type="text" class="form-control" placeholder="Ingrese Telefono Móvil" name="telefono">
+            </div>
+            <div class="form-group">
+              <select required name="cargo" class="form-control btn btn-default">
+                <option value="12">Jefe de Proyecto</option>
+                <option value="23">Analista</option>
+                <option value="32">Desarrollador</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <input type="submit" class="btn btn-success btn-lg" value="Ingresar">
+            </div>
+          </form>
         </div>
       </div>
     </div>
