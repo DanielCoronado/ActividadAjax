@@ -1,11 +1,11 @@
 $('#form-ingreso').submit(function(event){
   event.preventDefault();
 
-  $.post('../server/create.php',
+  $.post('../../instructivo_2_guiaAjax/server/create.php',
     $('#form-ingreso').serialize(),
       function(dato){
         $("#agregar").modal('hide');
-        if(dato.exito){
+        if(dato.completado){
           console.log(dato);
           var variable="";
           if(dato.cargo == 12) variable="Jefe Proyecto";
@@ -20,11 +20,11 @@ $('#form-ingreso').submit(function(event){
                             '<td>'+dato.email+'</td>'+
                             '<td>'+dato.telefono+'</td>'+
                             '<td>'+variable+'</td>'+
-                            '<td> <button value=\''+dato.rut+'\' type="button" class="btn btn-info">Actualizar</button> - <a id="eliminar" class="btn btn-danger">Eliminar</a></td>'+
+                            '<td> <button value=\''+dato.rut+'\' type="button" class="btn btn-info" data-toggle="modal" href="#editar" data-target="#editar">Editar</button> - <a  id=\'delete_'+dato.rut+'\' class="btn btn-danger"  data-toggle="modal" href="#eliminar" data-target="#eliminar">Eliminar</a></td>'+
                           '</tr>'
                          ); 
         }else{
           alert('Error al recibir la respuesta del Servidor');
         }
-      });
+    });
 });

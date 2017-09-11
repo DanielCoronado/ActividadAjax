@@ -4,7 +4,7 @@
 
   /* Enviamos la instrucción SQL que permite ingresar 
   los datos a la BD en la tabla contactos */
-  $result= $db->query("select * from contacto c inner join cargo a on (c.cod_cargo=a.codigo);");
+  $result= $db->query("SELECT * FROM contacto c INNER JOIN cargo a ON (c.cod_cargo=a.codigo);");
   $datos = array ();
   // Recorremos la consulta y usamos echo para que el .get de JQuery extraiga valores
   for($i=0; $i < $db->rows($result);$i++) {
@@ -20,6 +20,6 @@
   } 
 
   header('Content-Type: application/json');   
-  echo json_encode (array ('exito' => true, 'datos' => $datos) );
+  echo json_encode (array ('completado' => true, 'datos' => $datos) );
 
 ?>

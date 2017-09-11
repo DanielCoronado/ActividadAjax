@@ -10,10 +10,10 @@
 
   /* Enviamos la instrucción SQL que permite ingresar 
   los datos a la BD en la tabla contactos */
-  if($db->query("insert into contacto values ('$rut','$nombre','$mail','$telefono', '$cargo');")){
+  if ($db->query("INSERT INTO contacto VALUES ('$rut','$nombre','$mail','$telefono', '$cargo');")) {
     header('Content-Type: application/json');
-    echo json_encode(array('exito'=>true, 'rut'=>$rut,'nombre'=>$nombre, 'email'=>$mail,'telefono'=>$telefono,'cargo'=>$cargo));
-  }else{
+    echo json_encode(array('completado'=>true, 'rut'=>$rut,'nombre'=>$nombre, 'email'=>$mail,'telefono'=>$telefono,'cargo'=>$cargo));
+  } else {
     die("Ocurrio UN problema al ejecutar la consulta de insercion en BBDD error [ ".$db->error." ]");
   }
 
